@@ -1,8 +1,7 @@
-import React from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import Constants from 'expo-constants';
+import React from 'react';
+import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import Text from './Text';
-import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
