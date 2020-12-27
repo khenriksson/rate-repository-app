@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
 });
 
 const Number = ({ item }) => {
-  console.log('typeof item :>> ', typeof item);
   const round = item >= 1000 ? `${(item / 1000).toFixed(1)}k` : item;
   return (
     <Text textAlign="center" fontSize="subheading" fontWeight="bold">
@@ -66,7 +65,6 @@ const Number = ({ item }) => {
 };
 
 const Title = ({ text }) => {
-  console.log('text :>> ', text);
   return (
     <Text textAlign="center" fontSize="subheading">
       {text}
