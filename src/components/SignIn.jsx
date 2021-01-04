@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import { View, TouchableWithoutFeedback } from 'react-native';
 import FormikTextInput from './FormikTextInput';
+import useSignIn from '../hooks/useSignIn';
 import * as yup from 'yup';
 
 import Text from './Text';
@@ -35,9 +36,20 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 const SignIn = () => {
-  const onSubmit = (values) => {
-    console.log('Works');
-    console.log(values);
+  const [signIn] = useSignIn();
+
+  const onSubmit = async (values) => {
+    console.log('values :>> ', values);
+    const { username, password } = values;
+
+    try {
+      const data = await signIn({ username, password });
+
+      console.log('HEEERE');
+      console.log('result :>> ', data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

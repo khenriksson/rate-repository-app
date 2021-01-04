@@ -8,9 +8,9 @@ const useRepositories = () => {
     // Other options
   });
   //   console.log('repositories :>> ', data);
-  const repositories = data;
+  data && console.log(data);
 
-  return { repositories, error, loading };
+  return { data, error, loading };
 };
 
 export default useRepositories;
